@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_number: 1
+  customer_name: MyString
+  customer_address: MyText
+  amount: 1.5
+  interest_rate: 1.5
+  opened_on: 2015-02-09
+  due_date: 2015-02-09
+  amount_due: 1.5
+  jewel: MyText
+  no_of_items: 1
+  gross_weight: 1.5
+  net_weight: 1.5
+  appraised_amount: 1.5
+  loan_amount: 1.5
+
+two:
+  account_number: 1
+  customer_name: MyString
+  customer_address: MyText
+  amount: 1.5
+  interest_rate: 1.5
+  opened_on: 2015-02-09
+  due_date: 2015-02-09
+  amount_due: 1.5
+  jewel: MyText
+  no_of_items: 1
+  gross_weight: 1.5
+  net_weight: 1.5
+  appraised_amount: 1.5
+  loan_amount: 1.5

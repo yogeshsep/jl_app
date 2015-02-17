@@ -1,0 +1,75 @@
+
+<h1><%= link_to "Special Jewel Loan", jewelloans_path %></h1>
+<br />
+
+<%= link_to"Edit Account", edit_jewelloan_path, class: "btn btn-primary" %>
+<%= link_to "Close Account",jewelloan_path,class: "btn btn-danger", method: :delete, confirm: "You want to delete current transaction?" %>
+
+<%= link_to "Add transaction", new_jltransaction_path(:id=>@jewelloan.id), class: "btn btn-primary" %>
+
+<div class="hero-unit">
+<h5><strong>Customer Name</strong> : <%= @jewelloan.customer_name %></h5>
+<h5><strong>Loan Amount</strong> : <%= @jewelloan.loan_amount %></h5>
+<h5><strong>Current Balance</strong> : <%= @jewelloan.amount_due %></h5>
+<h5><strong>Opened On</strong> : <%= @jewelloan.opened_on.strftime("%d/%m/%Y") %></h5>
+<h5><strong>Due date</strong> : <%= @jewelloan.due_date.strftime("%d/%m/%Y") %></h5>
+<hr>
+   
+<div class="row">
+   <div class="span6 jewelloan_left_span_properties">
+   <h4><span class="jewelloan">Jewel details</span></h4>
+   <div class="row">
+   <div class="span3">
+   <strong>Jewel</strong>
+   </div>
+   <div class="span3"> : <%= @jewelloan.jewel %> </div>
+   </div>
+   
+   <div class="row">
+   <div class="span3">
+   <strong>Number of Items</strong>
+   </div>
+   <div class="span3"> : <%= @jewelloan.no_of_items %> </div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>Gross Weight</strong>
+   </div>
+   <div class="span3"> : <%= @jewelloan.gross_weight %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">
+   <strong>Net Weight</strong>
+   </div>
+   <div class="span3"> : <%= @jewelloan.net_weight %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>Appraised Amount</strong>
+   </div>
+   <div class="span3"> : <%= @jewelloan.appraised_amount %></div>
+   </div>
+
+   <div class="row">
+   <div class="span3">   
+   <strong>Loan Amount</strong>
+   </div>
+   <div class="span3"> : <%= @jewelloan.loan_amount %></div>
+   </div>
+  
+   <div class="row">
+   <div class="span3">
+   <strong>Rate of interest</strong>
+   </div>
+   <div class="span3"> : <%= @jewelloan.interest_rate %>%</div>
+   </div>
+   </div>
+   </div>
+   </div>
+</hr>
+</div>
+</div>  
+

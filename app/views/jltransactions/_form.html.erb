@@ -1,0 +1,44 @@
+
+<%= form_for @jltransaction do |jlt| %>
+
+<%= jlt.hidden_field:jewelloan_id, :value => params[:jewelloan_id] %>
+
+<% if @jltransaction.errors.any? %>
+<h2>Transaction Failed</h2>
+<ul>
+<% @jltransaction.errors.full_messages.each do |error| %>
+<li><%= error %></li>
+<% end %>
+</ul>
+<% end %>      
+
+    <%= jlt.label :loan_amount %>
+    <%= jlt.text_field :loan_amount, :disabled => true, :value => @jltransaction.jewelloan.loan_amount %>
+           
+    <div><%= jlt.label :transaction_date %>
+    <%= jlt.text_field :transaction_date, :disabled => true, :value => Date.today.strftime("%d/%m/%Y")  %></div></br>
+    
+    <div><%= jlt.label :transaction_amount %>
+    <%= jlt.text_field :transaction_amount, :placeholder =>'0.00' %></div></br>
+
+    <div><%= jlt.label :transaction_mode %>
+    <%= jlt.select :transaction_mode, options_for_select(%w[Credit Debit]), { :include_blank => true} %></div></br>
+
+    <div><%= jlt.label :transaction_type %>
+    <%= jlt.select :transaction_type, options_for_select(%w[Cash Bank Transfer]), { :include_blank => true} %></div></br> 
+
+    <div><%= jlt.label :particulars %>
+    <%= jlt.text_field :particulars %></div></br>
+
+    <div><%= jlt.label :comments %>
+    <%= jlt.text_field :comments %></div></br>
+	  
+
+  <div>    
+  </div>
+    <%= jlt.submit "Submit Transaction", class: "btn btn-success", data: {disable_with: "Submitting....."} %>     
+    <% end %></div>
+  </div>
+</div>
+
+

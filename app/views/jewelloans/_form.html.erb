@@ -1,0 +1,63 @@
+
+<%= form_for @jewelloan , :html => {:multipart => true} do |f| %>  
+ 
+<% if @jewelloan.errors.any? %>
+<h2>Couldn't create a Special JL</h2>
+<ul>
+<% @jewelloan.errors.full_messages.each do |error| %>
+<li><%= error %></li>
+<% end %>
+</ul>
+<% end %>    
+
+    <div><%= f.label :customer_name, class:'required' %>
+    <%= f.text_field :customer_name, :placeholder =>'Customer Name' %></div></br>
+   
+    <div><%= f.label :customer_address %>
+    <%= f.text_area :customer_address, :id => "address", :cols => 15, :rows => 5 %></div></br>
+
+    <div><%= f.label :opened_on%>
+    <%= f.text_field :opened_on, :disabled => true, :value => Date.today.strftime("%d/%m/%Y") %></div></br>
+
+    <div><%= f.label :due_date %>
+    <%= f.text_field :due_date, :disabled => true %></div></br>    
+
+    <div><%= f.label :jewel %>
+    <%= f.text_area :jewel, :id => "address", :cols => 15, :rows => 5 %></div></br>
+
+    <div><%= f.label :no_of_items, class:'required' %>
+    <%= f.text_field :no_of_items, :class => 'input-medium' %></div></br>
+
+    <div><%= f.label :gross_weight, class:'required' %>
+    <%= f.text_field :gross_weight, :placeholder =>'0.00' %></div></br>
+
+    <div><%= f.label :net_weight, class:'required' %>
+    <%= f.text_field :net_weight, :placeholder =>'0.00' %></div></br>
+
+    <div><%= f.label :appraised_amount, class:'required' %>
+    <%= f.text_field :appraised_amount, :placeholder =>'0.00' %></div></br>
+
+    <div><%= f.label :loan_amount, class:'required' %>
+    <%= f.text_field :loan_amount, :placeholder =>'0.00' %></div></br>    
+   
+    <div><%= f.label :transaction_mode, class:'required' %>
+    <%= f.select :transaction_mode, options_for_select(%w[Debit]), { :include_blank => true} %></div></br>
+
+    <div><%= f.label :transaction_type, class:'required' %>
+    <%= f.select :transaction_type, options_for_select(%w[Cash Bank Transfer]), { :include_blank => true} %></div></br> 
+
+    <div><%= f.label :particulars, class:'required' %>
+    <%= f.text_field :particulars %></div></br>
+
+    <div><%= f.label :comments %>
+    <%= f.text_field :comments %></div></br>
+    
+  <div>    
+  </div>
+    <%= f.submit "Create", class: "btn btn-success", data: {disable_with: "Creating....."} %>     
+    <% end %></div>
+  </div>
+</div>
+
+
+

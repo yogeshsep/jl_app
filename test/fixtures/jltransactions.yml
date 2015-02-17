@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_date: 2015-02-13
+  transaction_amount: 1.5
+  transaction_mode: MyString
+  transaction_type: MyString
+  particulars: MyString
+  comments: MyString
+
+two:
+  transaction_date: 2015-02-13
+  transaction_amount: 1.5
+  transaction_mode: MyString
+  transaction_type: MyString
+  particulars: MyString
+  comments: MyString

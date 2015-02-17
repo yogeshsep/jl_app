@@ -1,0 +1,35 @@
+
+
+<div><%= link_to 'New JL', new_jewelloan_path, class: "btn btn-primary" %></div></br>
+
+<h6 class= "alert alert-info"><%= page_entries_info @jewelloan %></h6>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Account Number</th>
+      <th>Opened Date</th>
+      <th>Customer Name</th> 
+      <th>Loan Amount</th>     
+      <th>Due Date</th>   
+      <th>Current Balance</th>             
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jewelloan.each do |jl| %>
+      <tr>
+        <td><%= link_to "#{jl.account_number}" , jewelloan_path(jl) %></td>
+        <td><%= jl.opened_on.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to "#{jl.customer_name}" , jewelloan_path(jl) %></td>       
+        <td><%= jl.loan_amount %></td>
+        <td><%= jl.due_date.strftime("%d/%m/%Y") %></td> 
+        <td><%= jl.amount_due %></td>             
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= will_paginate @jewelloan %>

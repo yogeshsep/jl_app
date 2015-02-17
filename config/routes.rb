@@ -1,11 +1,40 @@
 Rails.application.routes.draw do
+
+  resources :jltransactions
+  get 'jltransactions/new'
+
+  get 'jltransactions/create'
+
+  get 'jltransactions/index'
+
+  get 'jltransactions/show'
+
+  get 'jltransactions/update'
+
+  get 'jltransactions/edit'
+
+  get 'jltransactions/destroy'
+
+  resources :jewelloans
+  get 'jewelloans/new'
+
+  get 'jewelloans/create'
+
+  get 'jewelloans/index'
+
+  get 'jewelloans/show'
+
+  get 'jewelloans/update'
+
+  get 'jewelloans/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
  
-   root 'application#jewel'
+   root 'jewelloans#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
