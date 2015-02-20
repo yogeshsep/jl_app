@@ -49,10 +49,22 @@ class JewelloansController < ApplicationController
     end   
   end
 
+  def close
+   @jewelloan = Jewelloan.find(params[:id])    
+    if @jewelloan.transaction_mode == 'Credit' 
+      @jewelloan.update_attributes(:loan_amount => 0.00)        
+      flash[:success] = "Account Closed"    
+    else
+      :jewelloan
+    end
+    render 'close'        
+  end
+
+  
   private
 
   def jewelloan_params
-    params.require(:jewelloan).permit(:account_number, :customer_name, :customer_address, :amount, :interest_rate, :opened_on, :due_date, :amount_due, :jewel, :no_of_items, :gross_weight, :net_weight, :appraised_amount, :loan_amount, :transaction_mode, :transaction_type, :particulars, :comments)
+    params.require(:jewelloan).permit(:account_number, :customer_name, :customer_address, :amount, :interest_rate, :opened_on, :due_date, :amount_due, :jewel, :no_of_items, :gross_weight, :net_weight, :appraised_amount, :loan_amount, :transaction_mode, :transaction_type, :particulars, :comments, :close_date, :no_of_days)
   end
 
 end

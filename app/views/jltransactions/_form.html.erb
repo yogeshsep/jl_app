@@ -19,7 +19,7 @@
     <%= jlt.text_field :transaction_date, :disabled => true, :value => Date.today.strftime("%d/%m/%Y")  %></div></br>
     
     <div><%= jlt.label :transaction_amount %>
-    <%= jlt.text_field :transaction_amount, :placeholder =>'0.00' %></div></br>
+    <%= jlt.text_field :transaction_amount, :placeholder =>'₹ 0.00' %></div></br>
 
     <div><%= jlt.label :transaction_mode %>
     <%= jlt.select :transaction_mode, options_for_select(%w[Credit Debit]), { :include_blank => true} %></div></br>

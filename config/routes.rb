@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   resources :jltransactions
+
+  resources :jewelloans do
+    get :close, :on => :member
+  end
+
   get 'jltransactions/new'
 
   get 'jltransactions/create'
@@ -15,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'jltransactions/destroy'
 
-  resources :jewelloans
+
   get 'jewelloans/new'
 
   get 'jewelloans/create'
@@ -26,7 +31,11 @@ Rails.application.routes.draw do
 
   get 'jewelloans/update'
 
+  get 'jewelloans/edit'
+
   get 'jewelloans/destroy'
+
+  get 'jewelloans/close'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213104910) do
+ActiveRecord::Schema.define(version: 20150220111027) do
 
   create_table "jewelloans", force: :cascade do |t|
     t.integer  "account_number"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20150213104910) do
     t.string   "transaction_type"
     t.string   "particulars"
     t.string   "comments"
+    t.date     "close_date"
+    t.integer  "no_of_days"
   end
 
   create_table "jltransactions", force: :cascade do |t|

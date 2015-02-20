@@ -1,11 +1,7 @@
 
-<h1><%= link_to "Special Jewel Loan", jewelloans_path %></h1>
-<br />
-
 <%= link_to"Edit Account", edit_jewelloan_path, class: "btn btn-primary" %>
-<%= link_to "Close Account",jewelloan_path,class: "btn btn-danger", method: :delete, confirm: "You want to delete current transaction?" %>
-
-<%= link_to "Add transaction", new_jltransaction_path(:id=>@jewelloan.id), class: "btn btn-primary" %>
+<%= link_to "Close Account", close_jewelloan_path, class: "btn btn-danger" %>
+<%= link_to "Add transaction", new_jltransaction_path(:id=>@jewelloan.id), class: "btn btn-success" %>
 
 <div class="hero-unit">
 <h5><strong>Customer Name</strong> : <%= @jewelloan.customer_name %></h5>
@@ -17,7 +13,7 @@
    
 <div class="row">
    <div class="span6 jewelloan_left_span_properties">
-   <h4><span class="jewelloan">Jewel details</span></h4>
+   <h3><span class="jewelloan">Jewel details</span></h3>
    <div class="row">
    <div class="span3">
    <strong>Jewel</strong>
